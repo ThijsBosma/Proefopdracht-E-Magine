@@ -33,6 +33,9 @@ public class QuestionInfo : MonoBehaviour
     [Header("Classes")]
     private ScoreAndAwnsers scoreAndAwnsers = new ScoreAndAwnsers();
 
+    [Header("CSVFiles")]
+    [SerializeField] private TextAsset _csvFile;
+
     private void OnEnable()
     {
         SetQuestionActive();
@@ -42,6 +45,7 @@ public class QuestionInfo : MonoBehaviour
     private void Start()
     {
         GetMaxScore();
+        ReadCSVFile();
     }
 
     /// <summary>
@@ -142,7 +146,7 @@ public class QuestionInfo : MonoBehaviour
     }
 
     /// <summary>
-    /// Calculates the max score
+    /// Calculates the max score which is used to calulcate your grade
     /// </summary>
     private void GetMaxScore()
     {
@@ -165,5 +169,16 @@ public class QuestionInfo : MonoBehaviour
 
         System.IO.File.WriteAllText(filePath, recordedPlayerMovements);
         Debug.Log("Files Saved");
+    }
+
+    private void ReadCSVFile()
+    {
+        string[] lines = _csvFile.text.Split('\n');
+
+        foreach (string line in lines)
+        {
+            string[] parts = line.Split(',');
+            Debug.Log($"Row data: {string.Join(",", parts)}");
+        }
     }
 }
