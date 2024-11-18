@@ -1,0 +1,7 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement style="flex-grow: 1;">
+        <ui:Label tabindex="-1" text="Vraag 3: Wat is de belangrijkste stap als je aan het &#10;werk gaat met stroom?" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Question" style="top: 0; -unity-text-align: upper-center; height: 35px;" />
+        <ui:TextField picking-mode="Ignore" value="Vul hier je antwoord in" name="Awnser" style="top: 39px;" />
+        <ui:Button text="Submit awnser" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Submit" style="height: 57px; top: 101px;" />
+    </ui:VisualElement>
+</ui:UXML>
