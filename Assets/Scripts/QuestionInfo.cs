@@ -39,6 +39,11 @@ public class QuestionInfo : MonoBehaviour
         SubmitAwnser();
     }
 
+    private void Start()
+    {
+        GetMaxScore();
+    }
+
     /// <summary>
     /// Gets the required data for the textfield
     /// </summary>
@@ -133,6 +138,18 @@ public class QuestionInfo : MonoBehaviour
         else
         {
             return false;
+        }
+    }
+
+    /// <summary>
+    /// Calculates the max score
+    /// </summary>
+    private void GetMaxScore()
+    {
+        for (int i = 0; i < _questionPoints.Length; i++)
+        {
+            scoreAndAwnsers.maxScore += _questionPoints[i];
+            Debug.Log(scoreAndAwnsers.maxScore);
         }
     }
 

@@ -6,5 +6,6 @@ using UnityEngine;
 public class ScoreAndAwnsers
 {
     public List<string> awnsers = new List<string>();
-    public int currentPoints;
+    public float currentPoints;
+    public float maxScore;
 }
